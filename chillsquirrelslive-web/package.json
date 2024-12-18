@@ -14,6 +14,7 @@
     "@tanstack/react-query": "^5.62.8",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
+    "react-ga4": "^2.1.0",
     "react-twitch-embed": "^3.0.2",
     "viem": "2.x",
     "wagmi": "^2.14.3"
