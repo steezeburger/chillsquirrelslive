@@ -1,11 +1,12 @@
 import { ConnectButton } from "@rainbow-me/rainbowkit";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useAccount, useConfig, useSendTransaction } from "wagmi";
 import { parseEther } from "viem";
-import { estimateGas } from "@wagmi/core";
 
 // chill squirrels flame address
 const TO = "0x15459C7b58016B147Bb7A07bCecf6dA234f51c31";
+const EXPLORER_LINK_PREFIX = "https://explorer.flame.astria.org/address/";
+const EXPLORER_LINK_TO = `${EXPLORER_LINK_PREFIX}${TO}`;
 
 export default function SendTip() {
   const userAccount = useAccount();
@@ -13,19 +14,6 @@ export default function SendTip() {
   const { sendTransaction } = useSendTransaction({ config });
 
   const [amount, setAmount] = useState<string>("");
-
-  const [gasEstimate, setGasEstimate] = useState<string>("");
-  useEffect(() => {
-    const fetchGasEstimate = async () => {
-      const result = await estimateGas(config, {
-        to: "0xd2135CfB216b74109775236E36d4b433F1DF507B",
-        value: parseEther(amount),
-      });
-      setGasEstimate(result.toString());
-    };
-    fetchGasEstimate().then(r => console.log(r));
-  }, [amount]);
-  console.log("gasEstimate", gasEstimate);
 
   const updateAmount = (event: React.ChangeEvent<HTMLInputElement>) => {
     setAmount(event.target.value);
@@ -53,11 +41,19 @@ export default function SendTip() {
         {userAccount?.address && (
           <div>
             <div className="send-tip-address">
-              <p>sending donation to: {TO}</p>
+              <p>sending donation to: <a className="underlined"
+                                         href={EXPLORER_LINK_TO}
+                                         target="_blank">
+                {TO}
+              </a></p>
             </div>
             <div className="send-tip-meat">
               <div>
-                <p className="underlined">from: {userAccount.address}</p>
+                <p>from: <a className="underlined"
+                            href={`${EXPLORER_LINK_PREFIX}${userAccount.address}`}
+                            target="_blank">
+                  {userAccount.address}
+                </a></p>
               </div>
               <div>
                 <p>amount: <input type="text"
