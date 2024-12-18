@@ -60,9 +60,9 @@ export default function SendTip() {
               <div>
                 <p className="input-container">
                   amount: <input type="text"
-                                  placeholder="0.00"
-                                  onChange={updateAmount}
-                                  value={amount}/><span className="input-label">TIA</span>
+                                 placeholder="0.00"
+                                 onChange={updateAmount}
+                                 value={amount}/><span className="input-label">TIA</span>
                   <button type="button"
                           className="send-tip-button"
                           onClick={sendTip}>
