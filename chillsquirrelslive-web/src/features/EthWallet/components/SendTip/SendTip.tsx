@@ -43,8 +43,10 @@ export default function SendTip() {
     <div className="send-tip-section">
       <div className="send-tip-title">
         <h3>
-          use Flame to send a donation for feeding the squirrels and other cute rehabbed small animals at the place
-          where i took this squirrel that i personally rescued with my own hands
+          did you know you can use
+          &nbsp;<a href="https://docs.astria.org/bridging/bridge-ui" target="_blank">Flame</a>&nbsp;
+          to send a donation for feeding the squirrels and other cute rehabbed small animals
+          at the place where i took this squirrel that i personally rescued with my own hands
         </h3>
       </div>
       <div className="send-tip-main">
