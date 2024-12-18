@@ -32,9 +32,11 @@ export default function SendTip() {
       <div className="send-tip-title">
         <h3>
           did you know you can use
-          &nbsp;<a href="https://docs.astria.org/bridging/bridge-ui" target="_blank">Flame</a>&nbsp;
-          to send a donation for feeding the squirrels and other cute rehabbed small animals
-          at the place where i took this squirrel that i personally rescued with my own hands
+          &nbsp;<a href="https://docs.astria.org/bridging/bridge-ui#bridge-to-flame" target="_blank">Flame</a>&nbsp;
+          to send a donation for feeding the squirrels and other small cute rehabbed animals
+          at the place where i took this squirrel that i personally rescued with my own hands?
+          it costs eleven hundred thousand dollars a year to take care of a single squirrel. for real though,
+          i donate this money to the local wildlife rehab center.
         </h3>
       </div>
       <div className="send-tip-main">
@@ -56,14 +58,15 @@ export default function SendTip() {
                 </a></p>
               </div>
               <div>
-                <p>amount: <input type="text"
+                <p className="input-container">
+                  amount: <input type="text"
                                   placeholder="0.00"
                                   onChange={updateAmount}
-                                  value={amount}/>
+                                  value={amount}/><span className="input-label">TIA</span>
                   <button type="button"
                           className="send-tip-button"
                           onClick={sendTip}>
-                    Send Tip
+                    donate
                   </button>
                 </p>
               </div>
