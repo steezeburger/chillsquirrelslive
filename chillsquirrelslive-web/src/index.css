@@ -92,3 +92,22 @@ input {
   background-color: black;
   color: #fff;
 }
+
+.input-container {
+  position: relative;
+}
+
+.input-container input {
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.input-container .input-label {
+  position: absolute;
+  top: 50%;
+  right: 212px;
+  transform: translateY(-50%);
+  pointer-events: none;
+  color: #999;
+  transition: 0.2s ease all;
+}
