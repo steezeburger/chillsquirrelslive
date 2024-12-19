@@ -15,7 +15,7 @@ function App() {
 
   const config = getDefaultConfig({
     appName: "chillsquirrels",
-    projectId: "YOUR_PROJECT_ID", // TODO
+    projectId: "51a5848d89ca253abf66376b665d69eb",
     chains: [flameChainInfo],
   });
 
@@ -41,7 +41,6 @@ function App() {
       </QueryClientProvider>
     </WagmiProvider>
   );
-
 }
 
 export default App;
